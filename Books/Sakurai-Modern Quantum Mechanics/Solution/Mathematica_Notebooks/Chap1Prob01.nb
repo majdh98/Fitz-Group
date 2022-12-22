@@ -1,0 +1,249 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9873,        241]
+NotebookOptionsPosition[      8312,        211]
+NotebookOutlinePosition[      8647,        226]
+CellTagsIndexPosition[      8604,        223]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Chapter 1 Problem 1: Stern Gerlach", "Section",
+ CellChangeTimes->{{3.693155293919388*^9, 3.6931552984733877`*^9}, {
+  3.7115270578075*^9, 3.7115270579925547`*^9}, {3.724257423694767*^9, 
+  3.724257440176132*^9}, {3.8019080047569427`*^9, 
+  3.801908005994052*^9}},ExpressionUUID->"2815707b-e45c-4994-be50-\
+fdebf1e0709c"],
+
+Cell[BoxData[
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.673798064717908*^9, 3.673798064718843*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"f54be92a-d5bc-4879-8623-17d33dedfacb"],
+
+Cell["\<\
+The following cell is simply a collection of the (SI) values for many \
+commonly used quantities\
+\>", "Text",
+ CellChangeTimes->{{3.7242579446180773`*^9, 3.7242579664476023`*^9}, 
+   3.733815822520021*^9},ExpressionUUID->"1a65417a-77fc-4876-bd07-\
+c2a4c336c242"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\[HBar]", "=", 
+   RowBox[{"QuantityMagnitude", "[", 
+    RowBox[{"UnitConvert", "[", 
+     RowBox[{"Quantity", "[", "\"\<ReducedPlanckConstant\>\"", "]"}], "]"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c", "=", 
+   RowBox[{"QuantityMagnitude", "[", 
+    RowBox[{"UnitConvert", "[", 
+     RowBox[{"Quantity", "[", "\"\<SpeedOfLight\>\"", "]"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"e", "=", 
+   RowBox[{"QuantityMagnitude", "[", 
+    RowBox[{"UnitConvert", "[", 
+     RowBox[{"Quantity", "[", "\"\<ElementaryCharge\>\"", "]"}], "]"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"k", "=", 
+   RowBox[{"QuantityMagnitude", "[", 
+    RowBox[{"UnitConvert", "[", 
+     RowBox[{"Quantity", "[", "\"\<BoltzmannConstant\>\"", "]"}], "]"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"u", "=", 
+   RowBox[{"QuantityMagnitude", "[", 
+    RowBox[{"UnitConvert", "[", 
+     RowBox[{"Quantity", "[", "\"\<AtomicMassUnit\>\"", "]"}], "]"}], "]"}]}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Mu]B", "=", 
+   RowBox[{"QuantityMagnitude", "[", 
+    RowBox[{"UnitConvert", "[", 
+     RowBox[{"Quantity", "[", "\"\<BohrMagneton\>\"", "]"}], "]"}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.720352236955158*^9, 3.720352311372408*^9}, {
+  3.724257526776733*^9, 3.724257534476375*^9}, {3.724257574838537*^9, 
+  3.724257584381991*^9}, {3.724257729469583*^9, 3.724257741298971*^9}, {
+  3.724257895539562*^9, 3.7242579160146227`*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"83635d9a-d824-43b7-b3d3-e7d6039ed1cc"],
+
+Cell["\<\
+Now we work on the specific problem and get some specific numbers\
+\>", "Text",
+ CellChangeTimes->{{3.7242579446180773`*^9, 3.7242579664476023`*^9}, {
+   3.724257997273066*^9, 3.724258013206686*^9}, 
+   3.724955056704051*^9},ExpressionUUID->"fe441a21-24b7-4060-a769-\
+26fe1e7bdd3a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mAg", "=", 
+   RowBox[{"u", " ", 
+    RowBox[{"QuantityMagnitude", "[", 
+     RowBox[{"ElementData", "[", 
+      RowBox[{"\"\<Silver\>\"", ",", "\"\<AtomicWeight\>\""}], "]"}], 
+     "]"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.724257668144752*^9, 3.724257693246222*^9}, {
+  3.724257760523513*^9, 3.724257774914337*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"ed5a6251-4477-4457-966b-d98f1ac1049a"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dBdz", "=", "10"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"temp", "=", 
+   RowBox[{"1000", "+", "273"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"length", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dist", "=", "1"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7242578401419907`*^9, 3.724257862644631*^9}, {
+  3.724258023998619*^9, 3.7242580353979597`*^9}, {3.724258432467111*^9, 
+  3.724258434795574*^9}},
+ CellLabel->"In[29]:=",ExpressionUUID->"e1e2e556-4afb-4c7f-8ac4-c13a260999b4"],
+
+Cell["\<\
+Find the time the sliver atom spends in the inhomogeneous magnetic field\
+\>", "Text",
+ CellChangeTimes->{{3.7242579446180773`*^9, 3.7242579664476023`*^9}, {
+  3.724257997273066*^9, 3.724258013206686*^9}, {3.7242580769898033`*^9, 
+  3.724258093611087*^9}},ExpressionUUID->"7e535ccb-7406-438f-a855-\
+a6ad589f6388"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"energy", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"3", "/", "2"}], ")"}], " ", "k", " ", "temp"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"Sqrt", "[", 
+    RowBox[{"2", " ", 
+     RowBox[{"energy", "/", "mAg"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"time", "=", 
+   RowBox[{"length", "/", "v"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.724258101704414*^9, 3.724258154280401*^9}},
+ CellLabel->"In[33]:=",ExpressionUUID->"8251fdab-b53d-47fd-836c-ca86fae35d4f"],
+
+Cell["Find the z- velocity from the force", "Text",
+ CellChangeTimes->{{3.7242579446180773`*^9, 3.7242579664476023`*^9}, {
+  3.724257997273066*^9, 3.724258013206686*^9}, {3.7242580769898033`*^9, 
+  3.724258093611087*^9}, {3.724258245077322*^9, 
+  3.724258271658801*^9}},ExpressionUUID->"c987b7d8-0331-48fb-a936-\
+9de02d153023"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"force", "=", 
+   RowBox[{"\[Mu]B", " ", "dBdz"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"accel", "=", 
+   RowBox[{"force", "/", "mAg"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"vz", "=", 
+   RowBox[{"accel", " ", "time"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.724258327141967*^9, 3.724258364870721*^9}},
+ CellLabel->"In[36]:=",ExpressionUUID->"f4bf7485-fac5-4588-8086-7701a3d6b570"],
+
+Cell["\<\
+Finally, find the deflection angle and the separation between the two beams \
+(in mm) at the screen\
+\>", "Text",
+ CellChangeTimes->{{3.7242579446180773`*^9, 3.7242579664476023`*^9}, {
+  3.724257997273066*^9, 3.724258013206686*^9}, {3.7242580769898033`*^9, 
+  3.724258093611087*^9}, {3.724258245077322*^9, 3.724258271658801*^9}, {
+  3.7242583778157578`*^9, 3.724258396117103*^9}, {3.724258481050848*^9, 
+  3.724258508967885*^9}},ExpressionUUID->"b0d63e15-db22-460e-823d-\
+3a9df0c2a818"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\[Theta]", "=", 
+   RowBox[{"vz", "/", "v"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"sep", "=", 
+  RowBox[{"1000", " ", "2", " ", "\[Theta]", " ", "dist"}]}]}], "Input",
+ CellChangeTimes->{{3.7242584509839087`*^9, 3.724258515047983*^9}},
+ CellLabel->"In[39]:=",ExpressionUUID->"d5c7c500-6116-4bed-9f16-aab7f1bef81f"],
+
+Cell[BoxData["3.5177471360347722647`6.695061048777925"], "Output",
+ CellChangeTimes->{{3.7242584953328867`*^9, 3.7242585204714813`*^9}, 
+   3.724258610717329*^9, 3.72433446085332*^9, 3.724334524019957*^9, 
+   3.724334748235392*^9, 3.7243348137137613`*^9, 3.7246609511297913`*^9, 
+   3.7246617002139*^9, 3.724692187720935*^9, 3.724756258596588*^9, 
+   3.72493978223943*^9, 3.724948414937879*^9, 3.725017549495324*^9, 
+   3.725182815734941*^9, 3.725192383113056*^9, 3.7252728955224953`*^9, 
+   3.72590275359231*^9, 3.7262552282756968`*^9, 3.727374673518807*^9, 
+   3.728056323720667*^9, 3.7297116343172817`*^9, 3.729785612252124*^9, 
+   3.72978729486852*^9, 3.730980076529702*^9, 3.731136455308467*^9, 
+   3.731154596798428*^9, 3.731160657605948*^9, 3.731431664908217*^9, 
+   3.7315162396995687`*^9, 3.7315927292484493`*^9, 3.7320986886844187`*^9, 
+   3.732374612051448*^9, 3.7326392575829268`*^9, 3.732867195826585*^9, 
+   3.733307290020588*^9, 3.73346896265662*^9, 3.733582351269565*^9, 
+   3.733584634031348*^9, 3.733745327770322*^9, 3.733745522335883*^9, 
+   3.733748403602373*^9, 3.733815812528617*^9, 3.733850733098022*^9, 
+   3.733902787417799*^9, 3.733926879743576*^9, 3.733949211885338*^9, 
+   3.734088436389476*^9, {3.801908115286463*^9, 3.801908126955821*^9}},
+ CellLabel->"Out[40]=",ExpressionUUID->"0f3324c3-a46a-421d-9fcf-1a4512015df2"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 755},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 327, 5, 67, "Section",ExpressionUUID->"2815707b-e45c-4994-be50-fdebf1e0709c"],
+Cell[910, 29, 219, 3, 30, "Input",ExpressionUUID->"f54be92a-d5bc-4879-8623-17d33dedfacb"],
+Cell[1132, 34, 273, 6, 35, "Text",ExpressionUUID->"1a65417a-77fc-4876-bd07-c2a4c336c242"],
+Cell[1408, 42, 1656, 41, 136, "Input",ExpressionUUID->"83635d9a-d824-43b7-b3d3-e7d6039ed1cc"],
+Cell[3067, 85, 292, 6, 35, "Text",ExpressionUUID->"fe441a21-24b7-4060-a769-26fe1e7bdd3a"],
+Cell[3362, 93, 439, 10, 30, "Input",ExpressionUUID->"ed5a6251-4477-4457-966b-d98f1ac1049a"],
+Cell[3804, 105, 564, 13, 94, "Input",ExpressionUUID->"e1e2e556-4afb-4c7f-8ac4-c13a260999b4"],
+Cell[4371, 120, 323, 6, 35, "Text",ExpressionUUID->"7e535ccb-7406-438f-a855-a6ad589f6388"],
+Cell[4697, 128, 571, 17, 73, "Input",ExpressionUUID->"8251fdab-b53d-47fd-836c-ca86fae35d4f"],
+Cell[5271, 147, 327, 5, 35, "Text",ExpressionUUID->"c987b7d8-0331-48fb-a936-9de02d153023"],
+Cell[5601, 154, 452, 11, 73, "Input",ExpressionUUID->"f4bf7485-fac5-4588-8086-7701a3d6b570"],
+Cell[6056, 167, 496, 9, 35, "Text",ExpressionUUID->"b0d63e15-db22-460e-823d-3a9df0c2a818"],
+Cell[CellGroupData[{
+Cell[6577, 180, 356, 7, 52, "Input",ExpressionUUID->"d5c7c500-6116-4bed-9f16-aab7f1bef81f"],
+Cell[6936, 189, 1348, 18, 34, "Output",ExpressionUUID->"0f3324c3-a46a-421d-9fcf-1a4512015df2"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

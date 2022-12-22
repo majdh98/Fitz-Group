@@ -1,0 +1,193 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7877,        185]
+NotebookOptionsPosition[      6771,        157]
+NotebookOutlinePosition[      7163,        174]
+CellTagsIndexPosition[      7120,        171]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Chapter 7 Problem 8: Porphyrin ring", "Section",
+ CellChangeTimes->{{3.693155293919388*^9, 3.6931552984733877`*^9}, {
+   3.7115270578075*^9, 3.7115270579925547`*^9}, {3.724257423694767*^9, 
+   3.724257440176132*^9}, {3.724258582813992*^9, 3.724258590996181*^9}, {
+   3.724267223146036*^9, 3.724267229945094*^9}, 3.7437684141118317`*^9, {
+   3.743780267459622*^9, 3.7437802793391447`*^9}, {3.7437884845871277`*^9, 
+   3.7437884935689917`*^9}, {3.744440621194764*^9, 3.744440629649577*^9}, {
+   3.74514543086417*^9, 3.745145439502599*^9}, {3.804776935192137*^9, 
+   3.804776942791751*^9}, {3.805017304985053*^9, 3.805017315138413*^9}, {
+   3.805448241124981*^9, 3.805448256278699*^9}, {3.8114325318034563`*^9, 
+   3.81143254587325*^9}, {3.812026619230076*^9, 3.812026650619336*^9}, {
+   3.8124484669923677`*^9, 3.8124484795883303`*^9}, {3.812652051609969*^9, 
+   3.812652059550469*^9}},ExpressionUUID->"4299e459-9624-4df3-a9e0-\
+fe4e4150e7b1"],
+
+Cell[CellGroupData[{
+
+Cell["This notebook just does some simple calculations", "Subsubsection",
+ CellChangeTimes->{{3.744440667913474*^9, 3.744440698230435*^9}, {
+  3.74514562816789*^9, 3.7451456395815783`*^9}, {3.804776951679491*^9, 
+  3.804776956422777*^9}, {3.805017329314191*^9, 3.8050173412962523`*^9}, {
+  3.8054482623662987`*^9, 3.805448272085416*^9}, {3.811432557248901*^9, 
+  3.811432573136194*^9}, {3.811444520806944*^9, 3.8114445248618813`*^9}, {
+  3.812026666642769*^9, 3.812026685729577*^9}, {3.8124485236917067`*^9, 
+  3.8124485311393347`*^9}, {3.8124694207920437`*^9, 3.812469435591673*^9}, {
+  3.812652067262417*^9, 
+  3.812652072750708*^9}},ExpressionUUID->"e9084775-9f35-4cfe-ac04-\
+e5b51cda8ae1"],
+
+Cell[BoxData[
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.673798064717908*^9, 3.673798064718843*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"dbd82c38-ec7b-417e-a582-c3111ee65c58"],
+
+Cell["Get the energy", "Text",
+ CellChangeTimes->{{3.7242579446180773`*^9, 3.7242579664476023`*^9}, 
+   3.733815822520021*^9, {3.743768708020048*^9, 3.743768716481593*^9}, {
+   3.743775837732401*^9, 3.743775846901084*^9}, {3.743775884357415*^9, 
+   3.743775899034967*^9}, {3.7437802980599623`*^9, 3.743780351829041*^9}, {
+   3.743788500072929*^9, 3.743788505480607*^9}, {3.744446217010531*^9, 
+   3.7444462176259117`*^9}, {3.744446261721404*^9, 3.7444462797112713`*^9}, {
+   3.744446367085195*^9, 3.744446373162944*^9}, {3.744446604370471*^9, 
+   3.744446613832212*^9}, {3.7444466849665337`*^9, 3.7444466914046164`*^9}, {
+   3.744446738043991*^9, 3.744446744658482*^9}, {3.744446940843237*^9, 
+   3.74444697070418*^9}, {3.744447003728301*^9, 3.744447024501751*^9}, 
+   3.744447166783608*^9, {3.744448206763966*^9, 3.744448221904764*^9}, {
+   3.744449098755949*^9, 3.7444491178015137`*^9}, {3.7444491482948437`*^9, 
+   3.744449158103651*^9}, {3.7444494159019003`*^9, 3.744449421251644*^9}, {
+   3.744450215050598*^9, 3.74445027212654*^9}, {3.7444514958586206`*^9, 
+   3.744451562550255*^9}, {3.7444518693612633`*^9, 3.74445188569559*^9}, {
+   3.745145727155521*^9, 3.7451457474649477`*^9}, {3.7481812749146843`*^9, 
+   3.748181287822455*^9}, {3.748181456913445*^9, 3.748181463575542*^9}, {
+   3.7503354648418627`*^9, 3.7503354803451557`*^9}, {3.7503355591353483`*^9, 
+   3.750335564357217*^9}, {3.750347550703421*^9, 3.7503475533831*^9}, {
+   3.750352367191221*^9, 
+   3.750352369038979*^9}},ExpressionUUID->"48d3d59e-0d01-498a-98a3-\
+11bc6a9939af"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"hBarVal", "=", 
+   RowBox[{"QuantityMagnitude", "[", 
+    RowBox[{"UnitConvert", "[", 
+     RowBox[{"Quantity", "[", "\"\<ReducedPlanckConstant\>\"", "]"}], "]"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"hVal", "=", 
+   RowBox[{"QuantityMagnitude", "[", 
+    RowBox[{"UnitConvert", "[", 
+     RowBox[{"Quantity", "[", "\"\<PlanckConstant\>\"", "]"}], "]"}], "]"}]}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mVal", "=", 
+   RowBox[{"QuantityMagnitude", "[", 
+    RowBox[{"UnitConvert", "[", 
+     RowBox[{"Quantity", "[", "\"\<ElectronMass\>\"", "]"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"cVal", "=", 
+   RowBox[{"QuantityMagnitude", "[", 
+    RowBox[{"UnitConvert", "[", 
+     RowBox[{"Quantity", "[", "\"\<SpeedOfLight\>\"", "]"}], "]"}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.75035238871988*^9, 3.7503523961181707`*^9}, {
+  3.7503524894825287`*^9, 3.7503525359782867`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"b278dd26-ddf1-46f9-9086-90a0b39073d1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\[CapitalDelta]E", "=", 
+   RowBox[{"9", " ", 
+    RowBox[{
+     RowBox[{"\[HBar]", "^", "2"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"2", " ", "m", " ", 
+       RowBox[{"R", "^", "2"}]}], ")"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Nu]", "=", 
+   RowBox[{"\[CapitalDelta]E", "/", "h"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Lambda]", "=", 
+   RowBox[{"c", "/", "\[Nu]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.750352417341358*^9, 3.750352452636469*^9}, 
+   3.750352486908042*^9, {3.7503525582562027`*^9, 3.750352600398292*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"b7887dc8-c4ff-4264-80ca-8d260cab2456"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"10", "^", "9"}], "\[Lambda]"}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"\[HBar]", "\[Rule]", "hBarVal"}], ",", 
+    RowBox[{"h", "\[Rule]", "hVal"}], ",", 
+    RowBox[{"m", "\[Rule]", "mVal"}], ",", 
+    RowBox[{"c", "\[Rule]", "cVal"}], ",", 
+    RowBox[{"R", "\[Rule]", 
+     RowBox[{"0.4", " ", 
+      RowBox[{"10", "^", 
+       RowBox[{"(", 
+        RowBox[{"-", "9"}], ")"}]}]}]}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.750352609539095*^9, 3.750352675454495*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"240f82a9-1c8e-477d-8fb5-ff44d4ef3780"],
+
+Cell[BoxData["578.5233264889553`"], "Output",
+ CellChangeTimes->{{3.750352656340086*^9, 3.750352677281695*^9}, 
+   3.750352944527657*^9, 3.750528048970231*^9, 3.75147941580908*^9, 
+   3.751653408671937*^9, 3.812652124112536*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"1984c9d1-a120-46ab-9df1-cb32a1b86058"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 755},
+WindowMargins->{{141, Automatic}, {Automatic, 38}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 947, 13, 67, "Section",ExpressionUUID->"4299e459-9624-4df3-a9e0-fe4e4150e7b1"],
+Cell[CellGroupData[{
+Cell[1552, 39, 693, 10, 45, "Subsubsection",ExpressionUUID->"e9084775-9f35-4cfe-ac04-e5b51cda8ae1"],
+Cell[2248, 51, 218, 3, 30, "Input",ExpressionUUID->"dbd82c38-ec7b-417e-a582-c3111ee65c58"],
+Cell[2469, 56, 1548, 22, 35, "Text",ExpressionUUID->"48d3d59e-0d01-498a-98a3-11bc6a9939af"],
+Cell[4020, 80, 1079, 27, 94, "Input",ExpressionUUID->"b278dd26-ddf1-46f9-9086-90a0b39073d1"],
+Cell[5102, 109, 689, 17, 73, "Input",ExpressionUUID->"b7887dc8-c4ff-4264-80ca-8d260cab2456"],
+Cell[CellGroupData[{
+Cell[5816, 130, 606, 16, 30, "Input",ExpressionUUID->"240f82a9-1c8e-477d-8fb5-ff44d4ef3780"],
+Cell[6425, 148, 306, 4, 34, "Output",ExpressionUUID->"1984c9d1-a120-46ab-9df1-cb32a1b86058"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

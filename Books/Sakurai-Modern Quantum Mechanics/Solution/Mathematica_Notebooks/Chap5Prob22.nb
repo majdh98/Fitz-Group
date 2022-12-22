@@ -1,0 +1,127 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4350,        119]
+NotebookOptionsPosition[      3493,         95]
+NotebookOutlinePosition[      3828,        110]
+CellTagsIndexPosition[      3785,        107]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Chapter 5 Problem 22: S-State Normalization and dV/dr", "Section",
+ CellChangeTimes->{{3.693155293919388*^9, 3.6931552984733877`*^9}, {
+   3.7115270578075*^9, 3.7115270579925547`*^9}, {3.724257423694767*^9, 
+   3.724257440176132*^9}, {3.724258582813992*^9, 3.724258590996181*^9}, {
+   3.724267223146036*^9, 3.724267229945094*^9}, 3.7437684141118317`*^9, {
+   3.743780267459622*^9, 3.7437802793391447`*^9}, {3.7437884845871277`*^9, 
+   3.7437884935689917`*^9}, {3.744440621194764*^9, 3.744440629649577*^9}, {
+   3.74514543086417*^9, 3.745145439502599*^9}, {3.804776935192137*^9, 
+   3.804776942791751*^9}, {3.805017304985053*^9, 3.805017315138413*^9}, {
+   3.805022745870473*^9, 3.805022761072226*^9}, {3.8050228116300793`*^9, 
+   3.805022822573585*^9}},ExpressionUUID->"6a8c9163-c462-4bd3-a625-\
+15b1062bfa4b"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+This notebook is just for an integral of the 3D SHO wave function\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.744440667913474*^9, 3.744440698230435*^9}, {
+  3.74514562816789*^9, 3.7451456395815783`*^9}, {3.804776951679491*^9, 
+  3.804776956422777*^9}, {3.805017329314191*^9, 3.8050173412962523`*^9}, {
+  3.805022827053278*^9, 
+  3.805022838612562*^9}},ExpressionUUID->"bc9ad5c8-1db1-48e7-b973-\
+de7b9b05a975"],
+
+Cell[BoxData[
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.673798064717908*^9, 3.673798064718843*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"ee80abf0-6aec-4be9-9673-acc157bc3cbd"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$Assumptions", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"m", ">", "0"}], ",", 
+     RowBox[{"\[Omega]", ">", "0"}], ",", 
+     RowBox[{"\[HBar]", ">", "0"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.805022967184228*^9, 3.805022998052375*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"fb112f8a-826b-42fc-8e75-4439bb70ef74"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"4", " ", "Pi", " ", 
+  RowBox[{"N", "^", "2"}], " ", "m", " ", 
+  RowBox[{"\[Omega]", "^", "2"}], " ", 
+  RowBox[{"Integrate", "[", 
+   RowBox[{
+    RowBox[{"r", " ", 
+     RowBox[{"Exp", "[", 
+      RowBox[{
+       RowBox[{"-", "m"}], " ", "\[Omega]", " ", 
+       RowBox[{
+        RowBox[{"r", "^", "2"}], "/", "\[HBar]"}]}], "]"}], " ", 
+     RowBox[{"r", "^", "2"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"r", ",", "0", ",", "\[Infinity]"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8050228939895267`*^9, 3.805022962647884*^9}, {
+  3.805023013347088*^9, 3.805023015837474*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"4d2ad944-e1bc-413d-83d0-7c20fd9a1b89"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"2", " ", 
+   SuperscriptBox["N", "2"], " ", "\[Pi]", " ", 
+   SuperscriptBox["\[HBar]", "2"]}], "m"]], "Output",
+ CellChangeTimes->{{3.805023002214283*^9, 3.805023019493174*^9}},
+ CellLabel->"Out[6]=",ExpressionUUID->"71865573-cb60-4dd9-8113-8233394c708e"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 755},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 816, 11, 67, "Section",ExpressionUUID->"6a8c9163-c462-4bd3-a625-15b1062bfa4b"],
+Cell[CellGroupData[{
+Cell[1421, 37, 420, 8, 45, "Subsubsection",ExpressionUUID->"bc9ad5c8-1db1-48e7-b973-de7b9b05a975"],
+Cell[1844, 47, 218, 3, 30, "Input",ExpressionUUID->"ee80abf0-6aec-4be9-9673-acc157bc3cbd"],
+Cell[2065, 52, 372, 9, 30, "Input",ExpressionUUID->"fb112f8a-826b-42fc-8e75-4439bb70ef74"],
+Cell[CellGroupData[{
+Cell[2462, 65, 693, 17, 30, "Input",ExpressionUUID->"4d2ad944-e1bc-413d-83d0-7c20fd9a1b89"],
+Cell[3158, 84, 295, 6, 53, "Output",ExpressionUUID->"71865573-cb60-4dd9-8113-8233394c708e"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
